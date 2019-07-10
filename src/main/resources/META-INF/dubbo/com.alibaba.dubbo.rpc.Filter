@@ -1,0 +1,3 @@
+appContextProviderFilter=com.qunar.train.hcs.filter.DubboProviderTraceFilter
+appContextConsumerFilter=com.qunar.train.hcs.filter.DubboConsumerTraceFilter
+appContextProviderRecordFilter=com.qunar.train.hcs.filter.DubboProviderRecordFilter

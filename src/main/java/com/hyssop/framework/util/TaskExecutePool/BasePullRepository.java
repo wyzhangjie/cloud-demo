@@ -19,7 +19,7 @@ import java.util.Optional;
  */
 public abstract class BasePullRepository implements IBasePullRepository  {
 
-    @Value("${speed_domain}/api/resign/pull/${spring.profiles.active}?size={0}")
+    @Value("www.baidu.com")
     private String pullURL;
 
     private HttpClient httpClient;

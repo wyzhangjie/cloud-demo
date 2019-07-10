@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.annotation.Nonnull;
 
 /**
- * @author haoyang.shi
+ * @author zhjie.zhang
  * @date 2018/11/16
  */
 public interface HttpClient {

@@ -76,7 +76,7 @@ public class DemoPullService {
                         Optional<List<BaseRequest>> resignRequestOps = resignPullRepository.fetchRequest(calculateNeedFetchCount());
                         log.info("resignRequestOps:{}",resignRequestOps);
                         resignRequestOps.ifPresent(list->{
-                            list.forEach(resignRequest -> resignTicketService.pcResign(resignRequest));
+                        /*    list.forEach(resignRequest -> resignTicketService.pcResign(resignRequest));*/
                         });
                     }catch (Exception e){
                         log.error("run failed",e);

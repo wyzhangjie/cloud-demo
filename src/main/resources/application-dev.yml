@@ -12,8 +12,11 @@ spring:
        config: classpath:redisson.yaml
   thymeleaf:
     prefix: classpath:/templates/
+
 mybatis:
   mapper-locations: classpath:mapping/*/*Mapper.xml
   type-aliases-package: com.hyssop.framework.entity
 
 
+project:
+  env: dev
