@@ -14,7 +14,7 @@ import java.util.List;
 public abstract  class BaseAbstractTaskProcess implements BaseTaskProcess {
     public static List<BaseTaskProcess> baseTaskProcessList = new ArrayList<>(2);
 
-    public void tastProcess(){
+    public void tasKProcess(){
         for(BaseTaskProcess baseTaskProcess:baseTaskProcessList){
             baseTaskProcess.doProcess();
         }

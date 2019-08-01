@@ -8,6 +8,7 @@ package com.hyssop.framework.util.TaskExecutePool;
  * @UpdateDate:     2019/6/24$ 17:29$
  * @Version:        1.0
  */
+@FunctionalInterface
 public interface BaseTaskProcess {
-    public void doProcess();
+    void doProcess();
 }

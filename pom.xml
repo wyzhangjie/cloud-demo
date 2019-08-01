@@ -32,6 +32,16 @@
 			<version>3.10.6</version>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>transmittable-thread-local</artifactId>
+			<version>2.10.2</version>
+		</dependency>
+		<dependency>
 			<groupId>com.github.fartherp.spring.boot</groupId>
 			<artifactId>framework-spring-boot-starter</artifactId>
 			<version>3.0.4</version>
