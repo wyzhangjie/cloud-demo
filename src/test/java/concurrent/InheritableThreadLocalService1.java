@@ -47,7 +47,7 @@ public class InheritableThreadLocalService1 {
      * 模拟Control任务
      */
     static class ControlThread implements Runnable {
-         int i;
+        private int i;
 
         public ControlThread(int i) {
             this.i = i;
