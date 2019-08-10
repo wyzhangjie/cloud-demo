@@ -1,7 +1,7 @@
 package leetcode.list;
 
 /**
- * @Description:    链表相关
+ * @Description:    链表相关  https://www.cnblogs.com/xiaomiganfan/p/5390252.html
  * @Author:         zhjie.zhang
  * @CreateDate:     2019/7/10$ 11:12$
  * @UpdateUser:     zhjie.zhang
@@ -30,7 +30,7 @@ public class ListTest {
         }
     }
 
-    public static <T extends Comparable<T>> int getListLen(List<T> list) {
+    public static <T extends Comparable<? super T>> int getListLen(List<T> list) {
         int len = 0;
         while (list != null) {
             len++;
@@ -39,7 +39,7 @@ public class ListTest {
         return len;
     }
 
-    public static <T extends Comparable<T>> void printList(List<T> list) {
+    public static <T extends Comparable<? super T>> void printList(List<T> list) {
         while (list != null) {
             System.out.println(list.data);
             list = list.next;
@@ -51,7 +51,7 @@ public class ListTest {
     /**
      * 单链表反转
      */
-    public static <T extends Comparable<T>> List<T> revertList(List<T> list) {
+    public static <T extends Comparable<? super T>> List<T> revertList(List<T> list) {
         List<T> head = list;
         if (head == null || head.next == null) {
             return head;
@@ -73,7 +73,7 @@ public class ListTest {
     /**
      * 链表中环的检测
      */
-    public static <T extends Comparable<T>> boolean hasRound(List<T> list) {
+    public static <T extends Comparable<? super T>> boolean hasRound(List<T> list) {
 
         List<T> first = list;
         List<T> next = first.next;
@@ -94,7 +94,7 @@ public class ListTest {
     /**
      * 两个有序的链表合并
      */
-    public static <T extends Comparable<T>> List<T> twoListMerge(List<T> first, List<T> second) {
+    public static <T extends Comparable<? super T>> List<T> twoListMerge(List<T> first, List<T> second) {
         if (first == null && second == null) {
             return null;
         }
@@ -134,7 +134,7 @@ public class ListTest {
         return head;
     }
 
-    public static <T extends Comparable<T>> boolean isSmaller(List<T> first, List<T> second) {
+    public static <T extends Comparable<? super T>> boolean isSmaller(List<T> first, List<T> second) {
         boolean result = first.data.compareTo(second.data) <= 0 ? true : false;
         return result;
     }
@@ -142,7 +142,7 @@ public class ListTest {
     /**
      * 删除链表倒数第 n 个结点 先求链表长度，用len-n就是要走的步数了
      */
-    public static <T extends Comparable<T>> List<T> deleteBackwards(List<T> list, int n) {
+    public static <T extends Comparable<? super T>> List<T> deleteBackwards(List<T> list, int n) {
         List<T> head = list;
         int len = getListLen(list);
         if (n > len) {
@@ -171,7 +171,7 @@ public class ListTest {
     /**
      * 求链表的中间结点 偶数求中间两个 基数求中间一个。
      */
-    public static <T extends Comparable<T>> List<T> getMid(List<T> first) {
+    public static <T extends Comparable<? super T>> List<T> getMid(List<T> first) {
         List<T> tail = getTail(first);
         List<T> midBefor = first;
         List<T> midAfter = first;
@@ -190,7 +190,7 @@ public class ListTest {
 
     }
 
-    private static <T extends Comparable<T>> List<T> getTail(List<T> first) {
+    private static <T extends Comparable<? super T>> List<T> getTail(List<T> first) {
         List<T> tail = first;
         while (tail.next != null) {
             tail = tail.next;
