@@ -2,6 +2,7 @@ package com.hyssop.framework.controller;
 
 import com.hyssop.framework.service.UserService;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ public class HelloController {
         System.out.println("####IndexController####   1");
         userService.sendSms();
         System.out.println("####IndexController####   4");
+
         return "success";
     }
 }

@@ -2,7 +2,6 @@ package com.hyssop.framework.util.http;
 
 import java.io.IOException;
 
-import javax.annotation.Nonnull;
 
 /**
  * @author zhjie.zhang
@@ -14,6 +13,5 @@ public interface HttpClient {
      * @param isEncrypt 是否进行 AES 加解密，与 speed 等系统的 http 接口需要进行加密
      * @return
      */
-    @Nonnull
     HttpResponse execute(HttpRequest request, boolean isEncrypt) throws IOException;
 }

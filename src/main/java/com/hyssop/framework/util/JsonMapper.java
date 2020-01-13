@@ -9,12 +9,12 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 
+import com.sun.istack.internal.Nullable;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.util.Optional;
 
-import javax.annotation.Nullable;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,7 +50,6 @@ public class JsonMapper {
         return "";
     }
 
-    @Nullable
     public <T> T fromJson(String json, Class<T> clazz) {
         if (StringUtils.isBlank(json)) {
             return null;

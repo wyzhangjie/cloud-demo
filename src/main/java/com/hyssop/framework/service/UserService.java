@@ -1,7 +1,5 @@
 package com.hyssop.framework.service;
 
-import com.hyssop.framework.entity.showcase.ShowcaseSampleVo;
-import com.hyssop.framework.mapper.ShowcaseSampleMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -14,12 +12,7 @@ import java.util.stream.IntStream;
  */
 @Service
 public class UserService {
-    @Autowired
-    ShowcaseSampleMapper userMapper;
 
-    public ShowcaseSampleVo Sel(Long id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
 
     @Async
     public void sendSms() {

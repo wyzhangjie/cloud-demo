@@ -41,7 +41,6 @@ import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Nonnull;
 import javax.net.ssl.SSLContext;
 
 import lombok.extern.slf4j.Slf4j;
@@ -211,7 +210,6 @@ public class ApacheHttpClient implements HttpClient {
                 .build();
     }
 
-    @Nonnull
     @Override
     public HttpResponse execute(HttpRequest request, boolean isEncrypt) throws IOException {
         if (isEncrypt) {
