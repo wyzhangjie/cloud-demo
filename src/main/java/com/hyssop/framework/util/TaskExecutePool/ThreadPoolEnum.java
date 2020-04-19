@@ -3,10 +3,7 @@ package com.hyssop.framework.util.TaskExecutePool;
 import com.google.common.base.Suppliers;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.function.Supplier;
 
 /**
@@ -24,6 +21,11 @@ public enum ThreadPoolEnum {
     DISTRIBUTOR_EVENT_THREAD_POOL(Suppliers.memoize(() -> {
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("distributor_event_thread_pool_%d").build();
         return new ThreadPoolExecutor(100, 100, 5, TimeUnit.SECONDS, new SynchronousQueue<>(), threadFactory, BlockingRejectHandler.INSTANCE);
+    })::get),
+
+    LINKED_EVENT_THREAD_POOL(Suppliers.memoize(() -> {
+        ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("linked_event_thread_pool_%d").build();
+        return new ThreadPoolExecutor(100, 100, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<>(), threadFactory, BlockingRejectHandler.INSTANCE);
     })::get),;
 
     private Supplier<ThreadPoolExecutor> executor;

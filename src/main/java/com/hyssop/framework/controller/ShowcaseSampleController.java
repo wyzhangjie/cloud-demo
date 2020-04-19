@@ -18,8 +18,5 @@ public class ShowcaseSampleController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("getUser/{id}")
-    public String GetUser(@PathVariable Long id) {
-        return userService.Sel(id).toString();
-    }
+
 }

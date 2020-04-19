@@ -24,7 +24,7 @@ public class SuperEntity<T extends Model> extends Model {
     @TableField
     private LocalDateTime createTime ;
 
-    /** 更新时间*/
+    /** 证书类型*/
     @TableField
     private LocalDateTime  updateTime ;
 

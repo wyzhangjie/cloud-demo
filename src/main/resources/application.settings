@@ -1,0 +1,12 @@
+# common spring boot settings
+
+
+spring.redis.host=127.0.0.1
+spring.redis.port=6379
+#spring.redis.password=
+
+
+# Redisson settings
+
+#path to redisson.yaml or redisson.json
+spring.redis.redisson.config=classpath:redisson.yaml
