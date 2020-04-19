@@ -10,9 +10,9 @@ package leetcode.tree.base;
  */
 public class Node<T> {
 
-    T data;
-    Node left;
-    Node right;
+   public T data;
+   public Node left;
+    public Node right;
 
     public Node(T i) {
         this.data = i;

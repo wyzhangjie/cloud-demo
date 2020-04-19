@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @author zhjie.zhang
  */
 @SpringBootApplication
-@MapperScan("com.hyssop.framework.mapper")
+@MapperScan("com.hyssop")
 @EnableAsync
 public class ClouddemoApplication {
 
