@@ -25,10 +25,10 @@ import org.springframework.stereotype.Service;
  * StringTransactionalConsumer
  */
 @Service
-@RocketMQMessageListener(
+/*@RocketMQMessageListener(
     topic = "${demo.rocketmq.transTopic}",
     consumerGroup = "group_define_in_Aliware_MQ"
-     )
+     )*/
 public class ACLStringTransactionalConsumer implements RocketMQListener<String> {
     @Override
     public void onMessage(String message) {

@@ -6,6 +6,7 @@ import com.google.common.collect.Maps;
 
 import com.hyssop.framework.util.http.aes.AES;
 
+import io.netty.channel.local.LocalAddress;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;

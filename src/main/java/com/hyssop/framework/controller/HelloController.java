@@ -34,4 +34,9 @@ public class HelloController {
 
         return "success";
     }
+    public String helloFallback(long s, Throwable ex) {
+        // Do some log here.
+        ex.printStackTrace();
+        return "Oops, error occurred at " + s;
+    }
 }

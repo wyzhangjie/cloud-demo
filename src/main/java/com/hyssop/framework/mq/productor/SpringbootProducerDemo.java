@@ -27,23 +27,22 @@ import java.util.concurrent.atomic.AtomicInteger;
  * recketmq spring boot demo
  * 基于 RocketMQTemplate
  */
-@Component
 public class SpringbootProducerDemo {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringbootProducerDemo.class);
 
     private static final String TX_PGROUP_NAME = "myTxProducerGroup";
 
-    @Value("${example.rocketmq.transTopic}")
+    @Value("${demo.rocketmq.topic}")
     private String stringTransTopic;
 
-    @Value("${example.rocketmq.stringTopic}")
+    @Value("${demo.rocketmq.topic}")
     private String stringTopic;
 
-    @Value("${example.rocketmq.orderTopic}")
+    @Value("${demo.rocketmq.topic}")
     private String orderPaidTopic;
 
-    @Value("${example.rocketmq.msgExtTopic}")
+    @Value("${demo.rocketmq.topic}")
     private String msgExtTopic;
 
     @Resource

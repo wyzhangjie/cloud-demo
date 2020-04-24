@@ -19,7 +19,7 @@ import java.util.Optional;
  */
 public abstract class BasePullRepository implements IBasePullRepository  {
 
-    @Value("www.baidu.com")
+    @Value("http://dubbo-admin.opaydev.com:8051/")
     private String pullURL;
 
     private HttpClient httpClient;
