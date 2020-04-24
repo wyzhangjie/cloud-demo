@@ -1,6 +1,9 @@
 package com.hyssop.framework.rpc.serializable.base;
 
 import com.hyssop.framework.rpc.serializable.Serializer;
+import org.apache.commons.compress.utils.ByteUtils;
+
+import java.nio.charset.StandardCharsets;
 
 /**
  * @Author jie.zhang
@@ -11,26 +14,29 @@ import com.hyssop.framework.rpc.serializable.Serializer;
 public class IntegerSerializer implements Serializer<Integer> {
     @Override
     public int size(Integer entry) {
-        return 0;
+        return entry.intValue();
     }
 
     @Override
     public void serialize(Integer entry, byte[] bytes, int offset, int length) {
-
+        String a = entry.toString();
+        byte[] b = a.getBytes(StandardCharsets.UTF_8);
+        System.arraycopy(b,0,bytes,offset,length);
     }
 
     @Override
     public Integer parse(byte[] bytes, int offset, int length) {
-        return null;
+        String tmp =  new String(bytes,offset,length,StandardCharsets.UTF_8);
+        return Integer.parseInt(tmp);
     }
 
     @Override
     public byte type() {
-        return 0;
+        return Types.TYPE_INTEGER;
     }
 
     @Override
     public Class<Integer> getSerializeClass() {
-        return null;
+        return Integer.class;
     }
 }

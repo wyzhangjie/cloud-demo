@@ -35,6 +35,6 @@ public class StringSerializer implements Serializer<String> {
 
     @Override
     public Class<String> getSerializeClass() {
-        return null;
+        return String.class;
     }
 }
