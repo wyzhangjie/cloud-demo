@@ -6,6 +6,7 @@ import com.google.common.collect.Maps;
 
 import com.hyssop.framework.util.http.aes.AES;
 
+import io.netty.channel.local.LocalAddress;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -83,11 +84,7 @@ public class ApacheHttpClient implements HttpClient {
                         log.warn("Maximum tries reached for client http pool");
                         return false;
                     }
-                    if (exception instanceof NoHttpResponseException) {
-                        return true;
-                    }
-
-                    return false;
+                    return exception instanceof NoHttpResponseException;
                 })
                 .build();
     }

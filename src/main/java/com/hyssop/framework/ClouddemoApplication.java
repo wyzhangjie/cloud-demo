@@ -19,6 +19,7 @@ public class ClouddemoApplication {
     private RocketMQTemplate rocketMQTemplate;
 
     public static void main(String[] args) {
+
         SpringApplication.run(ClouddemoApplication.class, args);
     }
 }

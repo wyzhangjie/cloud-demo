@@ -66,21 +66,18 @@ public class DemoPullService {
                 log.warn("get local result error", e1);
                 return ;
         }
-        Thread thread=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true){
-                    try{
-                        Thread.sleep(DURATION*1000);
+        Thread thread=new Thread(() -> {
+            while (true){
+                try{
+                    Thread.sleep(DURATION*1000);
 
-                        Optional<List<BaseRequest>> resignRequestOps = resignPullRepository.fetchRequest(calculateNeedFetchCount());
-                        log.info("resignRequestOps:{}",resignRequestOps);
-                        resignRequestOps.ifPresent(list->{
-                        /*    list.forEach(resignRequest -> resignTicketService.pcResign(resignRequest));*/
-                        });
-                    }catch (Exception e){
-                        log.error("run failed",e);
-                    }
+                  /*  Optional<List<BaseRequest>> resignRequestOps = resignPullRepository.fetchRequest(calculateNeedFetchCount());
+                    log.info("resignRequestOps:{}",resignRequestOps);
+                    resignRequestOps.ifPresent(list->{
+                    *//*    list.forEach(resignRequest -> resignTicketService.pcResign(resignRequest));*//*
+                    });*/
+                }catch (Exception e){
+                    log.error("run failed",e);
                 }
             }
         });
