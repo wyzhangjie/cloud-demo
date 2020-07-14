@@ -12,7 +12,7 @@ import org.redisson.config.Config;
 public class RedissonManager {
     private static Config config = new Config();
     //声明redisso对象
-    private static Redisson redisson = null;
+    private static Redisson redisson;
     //实例化redisson
     static{
         config.useSingleServer().setAddress("redis://127.0.0.1:6379");

@@ -2,13 +2,10 @@ package com.hyssop.framework.redisson;
 
 
 import com.hyssop.framework.util.TaskExecutePool.ThreadPoolEnum;
-import concurrent.InheritableThreadLocalService1;
+import com.hyssop.algorithm.concurrent.InheritableThreadLocalService1;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.util.concurrent.ThreadPoolExecutor;
-
-import static org.junit.Assert.*;
 
 
 public class DistributedRedisLockTest {
