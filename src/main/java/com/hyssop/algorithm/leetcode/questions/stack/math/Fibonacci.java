@@ -1,4 +1,4 @@
-package algorithm.math;
+package com.hyssop.algorithm.leetcode.questions.stack.math;
 
 import java.util.Arrays;
 

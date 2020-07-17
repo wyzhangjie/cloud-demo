@@ -1,7 +1,6 @@
 package com.hyssop.algorithm.leetcode.questions.tree;
 
 import org.apache.commons.collections4.trie.PatriciaTrie;
-import org.junit.Test;
 
 /**
  * @Description:    java类作用描述
@@ -13,7 +12,6 @@ import org.junit.Test;
  */
 public class TestContains {
 
-    @Test
     public void testTrie(){
         PatriciaTrie<Double> t = new PatriciaTrie<>();
 

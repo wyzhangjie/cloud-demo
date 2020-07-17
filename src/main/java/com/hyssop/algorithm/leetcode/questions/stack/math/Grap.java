@@ -1,6 +1,7 @@
-package algorithm.math;
+package com.hyssop.algorithm.leetcode.questions.stack.math;
 
-import leetcode.stack.Stack;
+
+import com.hyssop.algorithm.leetcode.questions.stack.Stack;
 
 public class Grap {
 

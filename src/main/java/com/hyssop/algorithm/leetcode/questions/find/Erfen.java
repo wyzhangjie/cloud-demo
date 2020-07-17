@@ -10,6 +10,12 @@ import com.hyssop.algorithm.leetcode.questions.parent.Leetcode;
  * @UpdateUser:     zhjie.zhang
  * @UpdateDate:     2019/7/19$ 15:52$
  * @Version:        1.0
+ * 二分查找依赖的是顺序结构，就是数组。
+ *
+ * 二分查找依赖顺序结构的顺序性
+ *
+ * 太小的数据用二分不划算（r如果小的数组里面数据比较耗时比较长，二分查找能够减少比较次数）
+ *
  */
 public class Erfen extends Leetcode {
 

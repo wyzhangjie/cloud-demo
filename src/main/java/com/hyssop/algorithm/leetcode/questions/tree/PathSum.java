@@ -1,6 +1,7 @@
-package leetcode.tree;
+package com.hyssop.algorithm.leetcode.questions.tree;
 
-import leetcode.tree.base.Node;
+
+import com.hyssop.algorithm.leetcode.questions.tree.base.Node;
 
 public class PathSum {
     int pathSum(Node<Integer> root, int sum) {
