@@ -15,6 +15,10 @@
 	<description>Demo project for Spring Boot</description>
 
     <properties>
+		<maven-compiler-source.version>1.8</maven-compiler-source.version>
+		<maven-compiler-target.version>1.8</maven-compiler-target.version>
+		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <joda.time.version>2.9.2</joda.time.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -231,8 +235,20 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven-compiler-source.version}</source>
+					<target>${maven-compiler-target.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.hyssop.framework.ClouddemoApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
