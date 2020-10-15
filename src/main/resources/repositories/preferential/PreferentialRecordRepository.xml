@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.opay.payment.activity.provider.server.repository.PreferentialRecordRepository">
+    <resultMap id="BaseResultMap" type="com.opay.payment.activity.provider.server.entity.PreferentialRecord">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="activity_order_no" property="activityOrderNo" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="currency" property="currency" jdbcType="VARCHAR"/>
+        <result column="activity_id" property="activityId" jdbcType="VARCHAR"/>
+        <result column="order_no" property="orderNo" jdbcType="VARCHAR"/>
+        <result column="order_amount" property="orderAmount" jdbcType="BIGINT"/>
+        <result column="snapshot" property="snapshot" jdbcType="VARCHAR"/>
+        <result column="benefit_amount" property="benefitAmount" jdbcType="BIGINT"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+        <result column="channel_user_id" property="channelUserId" jdbcType="VARCHAR"/>
+        <result column="service_id" property="serviceId" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+   `id`,`version`,`activity_order_no`,`user_id`,`currency`,`activity_id`,`order_no`,`snapshot`,`order_amount`,`payment_amount`,`benefit_amount`,`status`,`remark`,`create_time`,`update_time`,`channel_user_id`,`service_id`
+
+  </sql>
+
+
+    <select id="getPreferentialRecordByUserIdAndActivityId"
+            parameterType="com.opay.payment.activity.provider.server.dto.UserRecordForToday" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from `preferential_record`
+        where
+        1=1
+        and status !="FAIL"
+        <if test="userId != null and userId != ''">
+            and user_id = #{userId}
+        </if>
+        <if test="activityId != null and activityId != ''">
+            and activity_id = #{activityId}
+        </if>
+        <if test="snapshot != null and snapshot != ''">
+            and snapshot = #{snapshot}
+        </if>
+        <if test="createTimeStart!=null">
+            <![CDATA[ AND create_time >= #{createTimeStart}]]>
+        </if>
+        <if test="createTimeEnd!=null">
+            <![CDATA[ AND create_time <= #{createTimeEnd} ]]>
+        </if>
+        <if test="serviceId!=null">
+            AND service_id = #{serviceId}
+        </if>
+        <if test="channelUserId!=null">
+            AND channel_user_id = #{channelUserId}
+        </if>
+    </select>
+
+    <!-- 修改订单状态 -->
+    <update id="updateOrderStatus">
+
+     UPDATE preferential_record SET version=#{version}+1, status=#{targetStatus} WHERE  order_no=#{orderNo} AND version=#{version}  AND status=#{sourceStatus}
+
+    </update>
+
+    <!-- 修改订单-是否发放奖励 -->
+    <update id="updateIsSendMoney">
+
+     UPDATE preferential_record SET  is_send_money=#{isSendMoney} WHERE  order_no=#{orderNo}   AND is_send_money!='Y'
+
+    </update>
+
+
+</mapper>

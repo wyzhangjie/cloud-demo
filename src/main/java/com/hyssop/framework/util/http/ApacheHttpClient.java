@@ -84,11 +84,7 @@ public class ApacheHttpClient implements HttpClient {
                         log.warn("Maximum tries reached for client http pool");
                         return false;
                     }
-                    if (exception instanceof NoHttpResponseException) {
-                        return true;
-                    }
-
-                    return false;
+                    return exception instanceof NoHttpResponseException;
                 })
                 .build();
     }

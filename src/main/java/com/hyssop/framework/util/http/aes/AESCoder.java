@@ -203,6 +203,9 @@ public class AESCoder {
 
 		String s = encrypt("{\"orderNo\":\"bj1140123163218981da00f\",\"mobile\":18688745114,\"domain\":\"bj1.trade.qunar.com\",\"otaType\":2}");
 		System.out.println(s);
+		s = encrypt("{\"orderNo\":\"bj1140123163218981da00f\",\"mobile\":18688745114,\"domain\":\"bj1.trade.qunar.com\",\"otaType\":2}");
+		System.out.println(s);
+
 		// System.out.println(decrypt(s));
 	}
 }
