@@ -40,20 +40,19 @@ import org.springframework.messaging.support.MessageBuilder;
  * Producer, using RocketMQTemplate sends a variety of messages
  */
 @SpringBootApplication
-public class ProducerACLApplication implements CommandLineRunner {
+public class ProducerACLApplication  {
     private static final String TX_PGROUP_NAME = "myTxProducerGroup";
-    @Resource
-    private RocketMQTemplate rocketMQTemplate;
+/*
     @Value("${demo.rocketmq.transTopic}")
     private String springTransTopic;
     @Value("${demo.rocketmq.topic}")
-    private String springTopic;
+    private String springTopic;*/
 
     public static void main(String[] args) {
         SpringApplication.run(ProducerACLApplication.class, args);
     }
 
-    @Override
+   /* @Override
     public void run(String... args) throws Exception {
         // Send string
         SendResult sendResult = rocketMQTemplate.syncSend(springTopic + ":acl", "Hello, ACL Msg!");
@@ -85,7 +84,7 @@ public class ProducerACLApplication implements CommandLineRunner {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 
     @RocketMQTransactionListener(
         txProducerGroup = TX_PGROUP_NAME

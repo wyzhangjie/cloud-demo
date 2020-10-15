@@ -1,9 +1,9 @@
 # common spring boot settings
 
 
-spring.redis.host=127.0.0.1
-spring.redis.port=6379
-#spring.redis.password=
+spring.redis.host=10.22.31.123
+spring.redis.port=7000
+spring.redis.password=ug33KaQGFfFl4YUk
 
 
 # Redisson settings

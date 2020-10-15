@@ -56,7 +56,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://10.22.31.39:3306/opay_overlord?useUnicode=true&characterEncoding=utf-8");
+        dsc.setUrl("jdbc:mysql://150.109.109.30:3306/opay_overlord?useUnicode=true&characterEncoding=utf-8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");

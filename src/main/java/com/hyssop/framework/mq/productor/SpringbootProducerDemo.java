@@ -6,7 +6,6 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionState;
-import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,8 +44,8 @@ public class SpringbootProducerDemo {
     @Value("${demo.rocketmq.topic}")
     private String msgExtTopic;
 
-    @Resource
-    private RocketMQTemplate rocketMQTemplate;
+ /*   @Resource
+    private RocketMQTemplate rocketMQTemplate;*/
 
 //    @Resource(name = "extRocketMQTemplate")
 //    private RocketMQTemplate extRocketMQTemplate;
@@ -55,7 +54,7 @@ public class SpringbootProducerDemo {
 
     public void produce() {
         // Send string
-        SendResult sendResult = rocketMQTemplate.syncSend(stringTopic, "Hello, World!");
+       /* SendResult sendResult = rocketMQTemplate.syncSend(stringTopic, "Hello, World!");
         LOGGER.info("syncSend1 to topic: {}, sendResult: {}", stringTopic, sendResult);
 
         // Use the extRocketMQTemplate
@@ -85,7 +84,7 @@ public class SpringbootProducerDemo {
         rocketMQTemplate.convertAndSend(msgExtTopic + ":example-tag-1", "I'm from example-tag-1");  // example-tag-1 will not be consumer-selected
         LOGGER.info("async to topic: {}, tag: {} ", msgExtTopic, "example-tag-1");
         rocketMQTemplate.convertAndSend(msgExtTopic + ":example-tag-2", "I'm from example-tag-2");
-        LOGGER.info("async to topic: {}, tag: {} ", msgExtTopic, "example-tag-2");
+        LOGGER.info("async to topic: {}, tag: {} ", msgExtTopic, "example-tag-2");*/
 
 //
 //        // Send a batch of strings
@@ -96,7 +95,7 @@ public class SpringbootProducerDemo {
     }
 
     private void testBatchMessages() {
-        List<Message> msgs = new ArrayList<Message>();
+      /*  List<Message> msgs = new ArrayList<Message>();
         for (int i = 0; i < 10; i++) {
             msgs.add(MessageBuilder.withPayload("Hello RocketMQ Batch Msg#" + i).
                     setHeader(RocketMQHeaders.KEYS, "KEY_" + i).build());
@@ -104,12 +103,12 @@ public class SpringbootProducerDemo {
 
         SendResult sr = rocketMQTemplate.syncSend(stringTopic, msgs, 60000);
 
-        System.out.printf("--- Batch messages send result :" + sr);
+        System.out.printf("--- Batch messages send result :" + sr);*/
     }
 
 
     private void testTransaction() throws MessagingException {
-        String[] tags = new String[]{"TagA", "TagB", "TagC", "TagD", "TagE"};
+        /*String[] tags = new String[]{"TagA", "TagB", "TagC", "TagD", "TagE"};
         for (int i = 0; i < 10; i++) {
             try {
 
@@ -124,7 +123,7 @@ public class SpringbootProducerDemo {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 
     @RocketMQTransactionListener(txProducerGroup = TX_PGROUP_NAME)

@@ -23,7 +23,7 @@ public class HelloController {
     private UserService userService;
     @RequestMapping("/test")
     public String test(){
-        return "welcome";
+        return "index";
     }
     @RequestMapping("/async")
     @ResponseBody
