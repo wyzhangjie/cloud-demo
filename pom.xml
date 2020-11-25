@@ -208,6 +208,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.jctools</groupId>
+			<artifactId>jctools-core</artifactId>
+			<version>2.1.1</version>
+		</dependency>
 		<!-- druid -->
 		<dependency>
 			<groupId>com.alibaba</groupId>

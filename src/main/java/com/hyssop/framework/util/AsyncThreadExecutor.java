@@ -20,15 +20,15 @@ import java.util.concurrent.*;
  * @update_time
  **/
 @Slf4j
-@Service
-@DependsOn("initApolloConfigure")
+/*@Service*/
+/*@DependsOn("initApolloConfigure")*/
 public class AsyncThreadExecutor implements AutoCloseable, TtlEnhanced {
 
-    @Value("${userThreadcorePoolSize}")
+    @Value("${userThreadcorePoolSize:5}")
     private int userThreadcorePoolSize;
-    @Value("${userThreadmaximumPoolSize}")
+    @Value("${userThreadmaximumPoolSize:5}")
     private int userThreadmaximumPoolSize;
-    @Value("${userThreadkeepAliveTime}")
+    @Value("${userThreadkeepAliveTime:5}")
     private long userThreadkeepAliveTime;
     /**
      * 用于周期性监控线程池的运行状态

@@ -11,8 +11,7 @@ import javax.annotation.Resource;
 /**
  * @author zhjie.zhang
  */
-@SpringBootApplication
-@MapperScan("com.hyssop.framework.entity")
+@SpringBootApplication(scanBasePackages = "com.hyssop")
 @EnableAsync
 public class ClouddemoApplication {
 
